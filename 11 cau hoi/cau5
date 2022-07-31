@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int result = 0;
+    scanf("%d", &n);
+        printf("Nhap 1 so: ");
+
+        if (n >= 0 && n < 100) {
+            result++;
+
+        } else {
+            printf("%d", result);
+        }
+    return 0;
+}
