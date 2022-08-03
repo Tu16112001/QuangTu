@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include <stdlib.h>
+void main()
+{
+  	int a[20], i;
+//nhap
+	for(i=0;i<20;i++)
+	  if(i == rand())
+	{
+	printf("\n nhap a[%d]= ",i);
+	}
+//xuat
+	for(i=0;i<20;i++){
+		printf("\n a[%d]= %d",i,a[i]);
+	}
+ 	 int dem = 0, k;
+   scanf("%d", &k);
+   printf("\nnhap so %d: ",k);
+ for (int i = 0; i < 20; i++)if (k == a[i])
+ {
+  printf("thuoc mang");
+  dem++;
+  break;
+ }
+ if (dem == 0)printf(" khong thoc mang");
+}

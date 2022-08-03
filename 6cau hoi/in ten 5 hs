@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+struct details
+{ char ten[30];} 
+	hocsinh[5];
+
+int main(){
+	int i;
+	
+	printf("Nhập tên của 5 học sinh:\n");
+	for(i = 0; i < 5; i++){
+	gets(hocsinh[i].ten);
+	}
+	
+	printf("\nHiển thị tên của 5 học sinh:\n");
+	for(i = 0; i < 5; i++){
+		printf("%s\n", hocsinh[i].ten);
+	}
+	
+	return 0;
+}
