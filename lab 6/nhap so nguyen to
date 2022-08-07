@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+	int a[10],i,max,min;
+	for(i=1;i<=5;i++){
+		scanf("%d",&a[i]);
+	}
+		for(i=1;i<=5;i++)
+	{
+		printf("\na[%d]= %d",i,a[i]);
+	}
+	max=a[1];
+	min=a[1];
+	//so sanh
+	for(i=1;i<=5;i++){
+		if( max < a[i]){
+			max = a[i];
+		}
+	}
+	for(i=1;i<=5;i++){
+		if( min > a[i]){
+			min = a[i];
+		}
+	}
+	printf("\nmax = %d;min = %d",max,min);
+}

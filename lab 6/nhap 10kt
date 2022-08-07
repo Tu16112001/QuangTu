@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include<string.h>
+int main(){
+	char s[10];
+	strlen(s);
+
+	printf("nhap 10kt: ");
+	fflush(stdin);
+	scanf("%s",&s);
+
+	if(strlen(s)<10)
+	{
+		return 0;
+	}
+	printf("vua nhap: %s",s);
+}

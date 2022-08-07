@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+  int n,m;
+  printf("\nNhap so luong sinh vien: ");
+  scanf("%d",&n);
+  printf("\nNhap so luong mon hoc: ");
+  scanf("%d",&m);
+  
+  int student[n][m];
+  int sum = 0;
+  //input
+  for(int i =0;i<n;i++){
+    for(int j=0; j<m; j++){
+      printf("\nNhap sinh vien %d mon hoc co %d diem: ",i +1,j+1);
+      scanf("%d",&student[i][j]);
+    }
+  }
+  //output
+  for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+      sum = sum + student[i][j];
+    }
+    printf("\nTong diem cua %d sinh vien la :%d",i+1,sum);
+  }
+  return 0;
+}
