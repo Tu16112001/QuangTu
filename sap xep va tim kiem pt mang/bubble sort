@@ -1,0 +1,24 @@
+#i#include<stdio.h>
+
+int main(){
+  int i,j;
+  int a[10];
+  for(i=0;i<5;i++){
+    printf("\nNhap so vao mang: a[%d]",i+1);
+    scanf("%d",&a[i]);
+  }
+  
+  for (int i=0; i<5; i++) {  //bubble sort      
+    for (int j=4; j>i; j--){            
+      if (a[j] > a[i]){               
+      int temp = a[i];               
+      a[i] = a[j]; 
+      a[j] = temp;
+      }
+    }
+  }
+  printf("\nIn ra man hinh :");
+  for(i=0;i<5;i++){
+    printf("\t%d",a[i]);
+  }
+}
