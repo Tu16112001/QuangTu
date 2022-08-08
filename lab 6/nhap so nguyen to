@@ -1,13 +1,25 @@
 #include <stdio.h>
 int main(){
-	int a[10],i,max,min;
+	int a[10],i,j,x,d,max,min;
 	for(i=1;i<=5;i++){
-		scanf("%d",&a[i]);
+	  scanf("%d",&a[i]);
+	  printf("%d ",a[i]);
 	}
-		for(i=1;i<=5;i++)
-	{
-		printf("\na[%d]= %d",i,a[i]);
-	}
+	for(i=1;i<=5;i++){
+			d=0;
+			if(a[i]<2){
+			printf("\nco so ko phai snt, nhap lai");
+			}else{
+				for(j=2;j<=a[i];j++){
+					if(a[i]%j==0){
+						d++;
+					}
+				}
+				if(d==1){
+					x++;
+				}
+			}
+		}
 	max=a[1];
 	min=a[1];
 	//so sanh
