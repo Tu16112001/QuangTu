@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b;
+    printf("Nhập Giá trị của a ");
+    scanf("%d", &a);
+    printf("\nNhap Gia tri cua b ");
+    scanf("%d", &b);
+ 
+    int temp = a;
+    a = b;
+    b = temp;
+ 
+    printf("\nSau khi trao doi: a = %d, b = %d", a, b);
+    return 0;
+}

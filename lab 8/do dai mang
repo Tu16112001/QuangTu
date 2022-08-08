@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include <string.h>
+
+int main(){
+  char a[80];
+  printf("\nNhap chuoi: ");
+	gets(a);
+	printf("\nDo dai cua chuoi: %zu",strlen(a));
+  return 0;
+}

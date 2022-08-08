@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+//viet mot ham de trao doi hai gia tri
+void swap(int *a, int *b) {
+   int temp;
+   temp = *a;
+   *a = *b;
+   *b = temp;
+}
+ 
+int main() {
+   int a, b;
+
+   printf("\nNhap so thu nhat: ");
+   scanf("%d", &a);
+   printf("\nNhap so thu hai: ");
+   scanf("%d", &b);
+ 
+   swap(&a, &b);
+   
+   printf("\n\nSau khi trao doi:");
+   printf("\nSo thu nhat: %d", a);
+   printf("\nSo thu hai: %d", b);
+ 
+   return (0);
+}

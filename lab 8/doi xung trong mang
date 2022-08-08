@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdbool.h>
+ 
+int main(){
+  char a[10], *p;
+  scanf("%s",a);
+  printf("Nhap kt mang : %s\n",a);
+
+  p = a;
+  bool isSymmetry = true;
+
+  for(int i=0; i<5; i++){
+   if(a[i] != *(p+(9-i))){
+     isSymmetry = false;
+     break;
+   }
+ }
+ 
+  if (isSymmetry) {
+  printf("La ki tu doi xung");  
+  }else {
+  printf("Khong la mang doi xung");
+ }
+}

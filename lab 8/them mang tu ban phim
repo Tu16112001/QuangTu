@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+ 
+ int main(){
+    int i, n;
+    int *ptr;  
+    int a[5],j,x,d;
+    printf("\nNhap so phan tu mang: ");
+    scanf("%d",&n);
+    //cap phap bo nho dong: malloc
+    //ptr = (int*)malloc(n*sizeof(int));
+
+    //calloc
+    ptr = (int*)calloc(n, sizeof(int));   
+    if(ptr==NULL){
+        printf("\nKhong du bo nho cho ban!!!");
+        exit(0);
+    }
+    printf("\nNhap vao %d phan tu : ",n);
+    for(i = 0;i<n; i++){
+        scanf("%d",(ptr+i));//scanf("%d",&ptr[i]);
+    }  
+        bool snt = true;
+        for(i=1;i<=n;i++){
+      scanf("%d",&a[i]);
+      printf("%d ",a[i]);
+    }
+    printf("\nMang gom: ");
+    for(i=0; i<n; i++){
+        printf("%d ",*(ptr+i));//printf("%d",ptr[i]);
+}
+    for(i=1;i<=n;i++){
+      printf("%d ",a[i]);
+    }
+    
+    free(ptr);   
+    return 0;
+}

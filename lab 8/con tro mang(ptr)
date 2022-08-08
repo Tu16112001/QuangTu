@@ -1,0 +1,16 @@
+#include <stdio.h>
+ 
+int main(){
+  int a[5];
+  int *ptr,i;
+  printf("Nhap so phan tu mang: ");
+  for(i=0;i<5;i++){
+    printf("%d ",i+1);
+    scanf("%d",&a[i]);
+  }
+  ptr = a;
+  for(i=0;i<5;i++){
+    printf("\na[i]dia chi:%d",i);
+    scanf("%d",&ptr[i]);
+  }
+}
