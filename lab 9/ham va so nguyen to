@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+  int inputNumber( int n){
+     //Num = 0 => không phải số nguyên tố
+    //Num = 1 => số nguyên tố
+    int Num = 1;
+
+    if (n <2) 
+    return Num = 0; /*Số nhỏ hơn 2 không phải số nguyên tố => trả về 0*/
+    int i = 1;
+    while(i <n){
+        if( n%i==0 ) {
+            Num = 0;
+            break; /*Chỉ cần tìm thấy 1 ước số là đủ và thoát vòng lặp*/
+        }
+        i++;
+    }
+    return Num;
+}
+  void checkNumber(int Num){
+ 
+    printf("Nhap so nguyen : ");
+    scanf("%d",&Num);
+
+    int check = Num;
+ 
+    if( check != 1) printf("\n%d la so nguyen to\n", Num);
+    else printf("\n%d khong phai la so nguyen to\n", Num);
+}

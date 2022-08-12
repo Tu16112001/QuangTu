@@ -1,0 +1,21 @@
+#include <stdio.h>
+int Power(int a, int n)
+{
+    int result = 1;
+    while(n--) {
+        result = result * a;
+    }
+    return result;
+}
+ 
+int main()
+{
+  int a,n,z;
+  scanf("%d", &a);
+  printf("Nhập vào cơ số a: %d",a);
+  scanf("%d", &n);
+  printf("\nNhập vào số mũ n: %d",n);
+  //gọi hàm power để tính a^n
+  z = Power(a, n);
+  printf("\n%.1d^%d = %.1d",a,n, z);
+}
