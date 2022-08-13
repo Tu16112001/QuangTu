@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+    int main(){
+        int a[10];
+        int i,j,n,tmp;
+        printf("\nNhap so phan tu trong mang can sap xep : ");
+        scanf("%d",&n);
+
+        for(i=0 ; i < n; i++){
+            printf("\nNhap pt a[%d]= ",i);
+            scanf("%d",&a[i]);
+        }
+
+        for(i=0; i < n;i++){
+            tmp = a[i];
+            j = i - 1;
+
+            while (j >= 0 && tmp < a[j]){
+                a[j+1] = a[j];
+                j--;
+            }
+            a[j + 1] = tmp;
+        }
+
+        printf("\nIn ra phan tu da duoc sap xep : ");
+        for(i=0 ; i < n; i++){
+            printf("%d ",a[i]);
+        }
+        return 0;
+}
