@@ -17,3 +17,36 @@ int main(){
     printf("%d^%d=%d",n,a,s);
     return 0;
 }
+#include<stdio.h>
+
+int Luythua(int n,int a){
+    int s = 1;
+    while (n--){
+        s = s * a;
+    }
+    return s;
+}
+void menu(){
+    int n,a,s,x;
+    while (x){
+        printf("\nNhap case : ");
+        scanf("%d",&x);
+        switch (x) {
+            case 1:
+                Luythua(n,a);
+                printf("\nNhap vao so : ");
+                scanf("%d",&n);
+                printf("\nNhap vao mũ : ");
+                scanf("%d",&a);
+                break;
+            case 2:
+                s = Luythua(n,a);
+                printf("%d^%d=%d",n,a,s);
+                continue;
+        }
+    }
+}
+int main(){
+    menu();
+    return 0;
+}
