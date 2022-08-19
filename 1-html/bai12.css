@@ -1,0 +1,14 @@
+#baitap {
+    text-align: center;
+    background-color: aqua;
+}
+
+#baitap img{
+    width: 600px;
+    height: 800px;
+}
+
+.mausac{
+    color: red;
+    cursor: pointer;
+}
