@@ -1,0 +1,146 @@
+#mobai {
+    background-color: white;
+    text-align: center;
+}
+
+#thanbai{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 915px;
+    background-color: gray;
+    
+}
+#tieude{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.so1{
+    width: 30%;
+    height: 70px ;
+    background-color: aliceblue;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.so2{
+    width: 66%;
+    height: 70px ;
+    background-color: aliceblue;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+#timkiem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:white;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.menu {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+.menu-item{
+    color: aqua;
+    margin: auto 10px auto 10px;
+    border-left:black solid 1px;
+}
+
+.searchContainer {
+    background-color: white;
+    height: 25px;
+    width: 200px;
+    border-radius: 20px;
+    border: red solid 1px;
+    margin: 10px 20px 10px 10px;
+    display: flex;
+}
+
+#thongtin{
+    margin: 15px 15px 15px 15px;
+    background-color: gray;
+}
+.Introduction{
+    height: 250px;
+    width: 15%;
+    float: left;
+    border: black solid 1px;
+    background-color: white;
+}
+.Hot-News{
+    height: 220px;
+    width: 30%;
+    float: left;
+    margin-left: 17px;
+    border: black solid 1px;
+    background-color: white;
+}
+.Photo{
+    height: 220px;
+    width: 30%;
+    float: left;
+    margin-left: 18px;
+    border: black solid 1px;
+    background-color: white;
+}
+.hinh{
+    height: 680px;
+    width: 20%;
+    float: right;
+    border: black solid 1px;
+    background-color: white;
+}
+.rong{
+     float: left;
+     width: 1020px;
+
+}
+.no{
+    height: 300px;
+    width: 19%;
+
+    float: left;
+    margin-top: 90px;
+    border: black solid 1px;
+    background-color: white;
+}
+.News{
+    height: 220px;
+    width: 25%;
+    margin-left: 15px;
+    margin-top: 15px;
+    float: left;
+    border: black solid 1px;
+    background-color: white;
+}
+#end{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border: black solid 1px;
+    height: 50px;
+    width: 80%;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+}
+.so3{
+    margin: 15px 15px 15px 20px;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+}
+.so4{
+    margin: 15px 10px 20px 15px;
+    color: aqua;
+    border-left: black solid 1px;
+}
