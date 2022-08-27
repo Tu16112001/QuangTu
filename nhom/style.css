@@ -1,0 +1,92 @@
+body {
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.name {
+    margin-top: 300px;
+}
+
+h1 {
+    color: blue;
+    font-size: 100px;
+    font-weight: 900;
+    margin: -28px;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+.warrap {
+    text-align: center;
+}
+
+#login {
+    height: 350px;
+    margin-top: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+input {
+    outline: none;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.button {
+    margin: 15px 10px 15px 10px;
+}
+
+label {
+    font-size: 3em;
+    margin-top: 10px;
+}
+
+.button button {
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+#account {
+    margin: 20px;
+    border-top: 1px solid black;
+    color: white;
+}
+
+#account button {
+    margin-top: 20px;
+    background-color: green;
+    height: 50pxpx;
+    width: 50%;
+}
+
+link a {
+    color: blue;
+}
+
+a {
+    text-decoration: none;
+}
+.link-page p{
+    font-size: 15px;
+}
