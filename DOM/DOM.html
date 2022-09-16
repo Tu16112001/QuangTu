@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM</title>
+    <meta name="" content="" charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div onclick="myFunction()">
+        <h1>The Document Object</h1>
+        <h2>The activeElement Property</h2>
+
+        <input type="text" value="An input field">
+        <button>A Button</button>
+
+        <p>Nhấp vào bất kỳ đâu trong tài liệu để hiển thị phần tử đang hoạt động:</p>
+
+        <p id="demo"></p>
+
+        <script>
+            function myFunction() {
+                const element = document.activeElement.tagName;
+                document.getElementById("demo").innerHTML = element;
+            }
+        </script>
+    </div>
+    <div>
+        <p> Nhấp vào bất kỳ đâu trong tài liệu để hiển thị "Hello World!". </p>
+        <p id="demo1">
+            <script>
+                document.addEventListener("click", myFunction);
+                function myFunction() {
+                    document.getElementById("demo1").innerHTML = "Hello World";
+                }
+            </script>
+    </div>
+    <div>
+        <h2>The adoptNode() Method</h2>
+
+        <iframe id="myFrame" src="../untitled folder/image/youtube.png" style="height:380px;width:520px;"></iframe>
+        <p>Phương thức acceptNode () thông qua một nút từ một tài liệu khác..</p>
+        <button onclick="myFunction()">Try it</button>
+        <script>
+            function myFunction() {
+                const frame = document.getElementById("myFrame");
+                const h1 = frame.contentWindow.document.getElementsByTagName("H1")[0];
+                const node = document.adoptNode(h1);
+                document.body.appendChild(node);
+            }
+        </script>
+    </div>
+
+    <div>
+        <h2>The baseURI Property</h2>
+        <p>The base URI of the document is:</p>
+        <p id="demo2"></p>
+        <p>Thuộc tính baseURI không được hỗ trợ trong Internet Explorer 11 trở xuống.</p>
+        <script>
+            let base = document.baseURI;
+            document.getElementById("demo2").innerHTML = base;
+        </script>
+
+        <p>Đặt thuộc tính body sẽ ghi đè tất cả các phần tử trong
+
+            <body> của tài liệu.
+        </p>
+        <p id="demo3"></p>
+        <script>
+            //const myBody = document.body.style.color = "red";
+            document.getElementById("demo3").innerHTML = myBody;
+        </script>
+    </div>
+
+    <div>
+        <p>
+            Nhấp vào "open" để mở tài liệu này, Phương thức close () đóng một cửa sổ đã mở trước đó bằng phương thức
+            open ().:</p>
+        <p>cookie doc hoặc trả về danh sách key = value phân tách bằng dấu ,</p>
+        <button onclick="myFunction()">Open</button>
+        <script>
+            function myFunction() {
+                document.open();
+                document.write("<h1>Hello World</h1>");
+                document.write("<p>Open a document owerwrites the original content.</p>");
+                document.close();
+            }
+        </script>
+    </div>
+
+    <div>
+        <h1>The Document Object</h1>
+        <p>Phương thức createAttribute () tạo một thuộc tính và trả về thuộc tính dưới dạng một đối tượng Attr.
+            <br> setAttributeNode() thuc thi lệnh tại vi trí chỉ định của mảng
+        </p>
+        <button onclick="myFunction()">Add</button>
+        <script>
+            function myFunction() {
+                // Tạo một thuộc tính lớp:
+                const att = document.createAttribute("class");
+
+                // Đặt giá trị của thuộc tính lớp
+                att.value = "democlass";
+
+                // Thêm thuộc tính lớp vào h1 đầu tiên;
+                document.getElementsByTagName("h1")[1].setAttributeNode(att);
+            }
+        </script>
+
+        <a id="myAnchor"><br>Go to W3schools.com</a>
+        <p>Click "Add" to add a href attribute to the anchor above.</p>
+
+        <button onclick="myFunction()">Add</button>
+
+        <script>
+            function myFunction() {
+                // Create a href attribute:
+                const attr = document.createAttribute("href");
+
+                // Set the value of the href attribute:
+                attr.value = "https://www.w3schools.com";
+
+                // Add the href attribute to an element:
+                document.getElementById("myAnchor").setAttributeNode(attr);
+            }
+        </script>
+    </div>
+
+    <div>
+        <h2>The createComment() Method tạo một bình luận và trả về nút bình luận</h2>
+        <p id="demo4"></p>
+
+        <script>
+            const comment = document.createComment("My personal comments");
+            document.body.appendChild(comment);
+            document.getElementById("demo4").innerHTML =
+                "Một nhận xét đã được thêm vào tài liệu này, nhưng như bạn biết, nhận xét là ẩn.";
+        </script>
+
+    </div>
+
+    <div>
+        <h2>The createDocumenFragment() Method
+            Phương thức createDocumentFragment () tạo một nút ngoài màn hình. <br>
+            cũng có thể được sử dụng để trích xuất các phần của tài liệu, thay đổi, thêm hoặc xóa một số nội dung và
+            chèn trở lại tài liệu.</h2>
+
+        <p>Add array items to an existing list:</p>
+
+        <ul id="myList">
+            <li>Apple</li>
+            <li>Pear</li>
+        </ul>
+
+        <script>
+            const fruits = ["Banana", "Orange", "Mango"];
+
+            // Create a document fragment:
+            const dFrag = document.createDocumentFragment();
+            for (let x in fruits) {
+                const li = document.createElement('li');
+                li.textContent = fruits[x];
+                dFrag.appendChild(li);
+            }
+
+            // Add fragment to a list: 
+            document.getElementById('myList').appendChild(dFrag);
+        </script>
+    </div>
+
+    <div>
+        <p>The createEvent() method tạo một đối tượng sự kiện.
+
+            Sự kiện phải thuộc loại sự kiện hợp pháp và phải được khởi tạo (lưỡng hợp) trước khi sử dụng..</p>
+
+        <p>"myDiv" will get a new star every time you mouse over it:</p>
+
+        <div id="myDiv" style="padding:50px;background-color:yellow;" onmouseover="this.innerHTML += '*';">*</div>
+
+        <p><button onclick="myFunction(event)">Simulate Mouse Over</button></p>
+
+        <script>
+            function myFunction(event) {
+                const ev = document.createEvent("MouseEvent");
+                ev.initMouseEvent("mouseover", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+
+                document.getElementById("myDiv").dispatchEvent(ev);
+            }
+        </script>
+    </div>
+
+    <div>
+        <p>Thuộc tính defaultView trả về đối tượng cửa sổ của tài liệu.</p>
+        <p id="demo5"></p>
+        <button stye="button" onclick="myFunction()">add</button>
+        <script>
+            function myFunction() {
+                const view = document.defaultView;
+                document.getElementById("demo5").innerHTML = view;
+            }
+        </script>
+    </div>
+
+    <div>
+        <!-- <p>Tài liệu này có thể chỉnh sửa. DesignMode được đặt thành "on".</p>
+        <p>abc</p>
+        <script>
+            document.designMode = "on";
+        </script>
+
+        <p>The document.doctype.name is: ten tai lieu</p>
+        <p id="demo6"></p>
+        <script>
+            const doctypeObj = document.doctype;
+            document.getElementById("demo6").innerHTML = doctypeObj.name;
+        </script> -->
+    </div>
+
+    <div>
+        <p>The number of embed elements in this document:</p>
+        <p id="demo7"></p>
+
+        <embed type="image/jpg" src="pic_trulli.jpg">
+        <embed type="image/jpg" src="pic_trulli.jpg">
+
+        <script>
+            let num = document.embeds.length;
+            document.getElementById("demo7").innerHTML = num;
+        </script>
+    </div>
+
+    <div>
+        <p>
+        <form id="myCarForm">
+            Favorite Car: <input type="text" name="fname" value="Volvo">
+        </form>
+        </p>
+        <p>
+        <form id="myColorForm">
+            Favorite Color: <input type="text" name="favcolor" value="Blue">
+        </form>
+        </p>
+
+        <p>The id of the first form element is:</p>
+        <p id="demo8"></p>
+
+        <script>
+            let html = document.forms.namedItem("myCarForm").innerHTML;
+            document.getElementById("demo8").innerHTML = html;
+        </script>
+    </div>
+
+    <div>
+        <h1 id="demo9">The Document Object</h1>
+        <h2>The getElementById() Method
+            Phương thức getElementById () trả về một phần tử có giá trị được chỉ định.</h2>
+        <button onclick="myFuntion()">click</button>
+        <script>
+            function myFuntion() {
+                document.getElementById("demo9").style.color = "red";
+            }
+        </script>
+
+        <h2>The getElementsByClassName() Method</h2>
+        <p>Thay đổi màu nền của phần tử đầu tiên với các lớp "example" và "color":</p>
+        <div class="example">
+            <p>This is a paragraph.</p>
+        </div>
+        <script>
+            const collection = document.getElementsByClassName("example");
+            collection[0].style.backgroundColor = "red";
+        </script>
+
+
+        <h2>The document.getElementsByName Method</h2>
+        <p>First Name: <input name="fname" type="text" value="Michael"></p>
+        <p>First Name: <input name="fname" type="text" value="Doug"></p>
+
+        <p>Phương thức getElementsByName () trả về một tập hợp các phần tử có tên được chỉ định.
+            <br> Tên thẻ của phần tử đầu tiên có tên "fname" là:
+        </p>
+        <p id="demo10"></p>
+        <script>
+            let elements = document.getElementsByName("fname");
+            document.getElementById("demo10").innerHTML = elements[0].tagName;
+        </script>
+    </div>
+
+    <div>
+        <p>Phương thức hasFocus () trả về true nếu tài liệu (hoặc bất kỳ phần tử nào trong tài liệu) có tiêu điểm.
+            <br>
+            Nếu không, nó trả về false..
+        </p>
+
+        <p id="demo11"></p>
+
+        <script>
+            setInterval("myFunction()", 1);
+
+            function myFunction() {
+                let text;
+                if (document.hasFocus()) {
+                    text = "The document has focus.";
+                } else {
+                    text = "The document does NOT have focus.";
+                }
+                document.getElementById("demo11").innerHTML = text;
+            }
+        </script>
+    </div>
+
+    <div>
+        <img src="klematis.jpg" alt="flower" width="150" height="120">
+        <img src="klematis2.jpg" alt="flower" width="150" height="120">
+
+        <p>The URL of the first image is:
+            Thuộc tính images trả về một tập hợp tất cả các phần tử <img> trong một tài liệu.</p>
+        <p id="demo12"></p>
+
+        <script>
+            let src = document.images.item(0).src;
+            document.getElementById("demo12").innerHTML = src;
+        </script>
+    </div>
+
+    <div>
+        <p>Thuộc tính implementation trả về đối tượng DOMimplementation xử lý tài liệu.
+        </p>
+        <p id="demo13"></p>
+        <script>
+            let answer = document.implementation.hasFeature("DOM", "1.0");
+            document.getElementById("demo13").innerHTML = answer;
+        </script>
+    </div>
+
+    <div>
+        <h2>The importtNode() Method</h2>
+        <iframe id="myFrame1" src="/default.asp" style="height:380px;width:100%;"></iframe>
+
+        <p>Click "Import" to import the first H1 element in the iframe (another document).</p>
+        <p>Phương thức importNode () nhập một nút từ một tài liệu khác.
+            Khi tham số thứ hai được đặt thành true, các nút con cũng sẽ được nhập.</p>
+        <button onclick="myFunction()">Import</button>
+
+        <script>
+            function myFunction() {
+                const frame = document.getElementById("myFrame1");
+                const h2 = frame.contentWindow.document.getElementsByTagName("H1")[0];
+                const node = document.importNode(h2, true);
+                document.body.appendChild(node);
+            }
+        </script>
+
+        <h2>The links Property</h2>
+        <p><a href="/html/default.asp">HTML Tutorial</a></p>
+        <p><a href="/css/default.asp">CSS Tutorial</a></p>
+
+        <p>Thuộc tính links trả về một tập hợp tất cả các liên kết trong tài liệu.</p>
+        <p id="demo14"></p>
+
+        <script>
+            let url = document.links[0].href;
+            document.getElementById("demo14").innerHTML = url;
+        </script>
+    </div>
+
+    <div onload="normPara()">
+        <h2>Phương thức normalize () loại bỏ các nút văn bản trống và nối các nút văn bản liền kề.</h2>
+
+        <button onclick="addTextNode()">Thêm một nút văn bản</button>
+        <button onclick="normPara()">Chuẩn hóa tài liệu</button>
+
+        <p>The document has <span id="cc" style="font-size:20px">1</span> child node(s).</p>
+
+        <script>
+            function addTextNode() {
+                const textNode = document.createTextNode("Click again. ");
+                const body = document.body;
+                body.appendChild(textNode);
+                const cc = document.getElementById("cc");
+                cc.innerHTML = body.childNodes.length;
+            }
+
+            function normPara() {
+                document.normalize();
+                const body = document.body;
+                const cc = document.getElementById("cc");
+                cc.innerHTML = body.childNodes.length;
+            }
+        </script>
+    </div>
+
+    <div>
+        <!-- <h2>Phương thức open () mở một tài liệu để viết.</h2>
+        <p>Mở một tài liệu sẽ xóa nội dung hiện có.</p>
+        <p>Mở tài liệu này và viết một số văn bản vào nó:</p>
+        <button onclick="myFunction()">Try it</button>
+        <script>
+            function myFunction() {
+                document.open();
+                document.write("<h1>Hello World</h1>");
+                document.close();
+            }
+        </script> -->
+        <h2>The querySelector() Method</h2>
+        <p>Thêm màu nền vào phần tử đầu tiên với ví dụ class = "":</p>
+        <p class="example">I am a paragraph.</p>
+        <p class="example">I am a paragraph.</p>
+        <script>
+            document.querySelector(".example").style.backgroundColor = "red";
+        </script>
+
+        <h2>The querySelectorAll() Method</h2>
+        <p>Thêm màu nền cho tất cả các phần tử với class = "example":</p>
+        <h2 class="example">A heading</h2>
+        <p class="example">A paragraph.</p>
+
+        <script>
+            const mau = document.querySelectorAll(".example");
+            for (let i = 0; i < mau.length; i++) {
+                mau[i].style.backgroundColor = "red";
+            }
+        </script>
+    </div>
+
+    <div>
+        <h2>The readyState Property:
+            Thuộc tính readyState trả về trạng thái (đang tải) của tài liệu hiện tại.</h2>
+        <h2>Thuộc tính referrer trả về URL của tài liệu đã tải tài liệu hiện tại.</h2>
+        <p id="demo16"></p>
+        <script>
+            document.getElementById("demo16").innerHTML = document.readyState;
+            document.getElementById("demo16").innerHTML = document.referrer;
+        </script>
+    </div>
+
+    <div>
+        <h2>The removeEventListener() Method
+            Phương thức removeEventListener () loại bỏ một trình xử lý sự kiện khỏi tài liệu.
+        </h2>
+        <p>Trình xử lý sự kiện di chuyển chuột hiển thị một số ngẫu nhiên mỗi khi bạn di chuyển chuột trong tài liệu
+            này.</p>
+        <p>Nhấp vào "Remove" để xóa trình xử lý sự kiện.</p>
+        <button onclick="removeHandler()">Remove</button>
+        <p id="demo17"></p>
+
+        <script>
+            document.addEventListener("mousemove", myFunction);
+
+            function myFunction() {
+                document.getElementById("demo17").innerHTML = Math.random();
+            }
+            function removeHandler() {
+                document.removeEventListener("mousemove", myFunction);
+            }
+        </script>
+    </div>
+    <div>
+        <script>
+            document.write("Thuộc tính scripts trả về một tập hợp tất cả các phần tử <script> trong tài liệu.");
+        </script>
+
+        <p>Số phần tử tập lệnh trong tài liệu:</p>
+        <p id="demo18"></p>
+        <script>
+            document.getElementById("demo18").innerHTML = document.scripts.length;
+        </script>
+
+        <p id="demo19">Thuộc tính title đặt hoặc trả về tiêu đề của tài liệu.</p>
+        <script>
+            document.getElementById("demo19").innerHTML = document.title;
+        </script>
+
+
+        <h1>Thuộc tính URL trả về URL đầy đủ của tài liệu.</h1>
+        <p id="demo20"></p>
+        <script>
+            document.getElementById('demo20').innerHTML = document.URL;
+        </script>
+    </div>
+    <div>
+        <h2>The write() Method</h2>
+        <h2>The Lorem Ipsum Passage</h2>
+        <p>This is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua.</p>
+        <p>Sử dụng document.write () sau khi tài liệu được tải, xóa tất cả HTML hiện có:</p>
+
+        <button type="button" onclick="myFunction()">Click me!</button>
+        <script>
+            function myFunction() {
+                document.write("Hello World");
+            }
+        </script>
+
+    </div>
+    <script type="javascript" src="main.js"></script>
+</body>
+
+</html>
