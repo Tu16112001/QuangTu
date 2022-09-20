@@ -87,3 +87,8 @@ form div input{
 .form-field small {
     color: var(--error-color);
 }
+
+button{
+    display: flex;
+    align-items: center;
+}

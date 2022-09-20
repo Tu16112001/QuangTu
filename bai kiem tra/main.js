@@ -2,7 +2,7 @@ const usernameEl = document.querySelector("#username");
 const passwordEl = document.querySelector("#password");
 const enterpasswordEl = document.querySelector("#enter-password");
 const emailEl = document.querySelector("#email");
-
+const phoneEl = document.querySelector("#phone-number");
 const form = document.querySelector("#signup");
 
 const checkUsername = () =>{
@@ -21,6 +21,21 @@ const checkUsername = () =>{
         valid = true;
       }
       return valid;
+};
+
+const checkPhone =() => {
+  let valid = false;
+  const phone = phoneEl.value.trim()
+  if(!isRequired(phone)){
+      showError(phoneEl,'Phone cannot be blank');
+  }else if (!isPhoneValid(phone)){
+      showError(phoneEl,'Phone is not valid');
+  }else{
+      showSuccess(phoneEl);
+      valid = true;
+  }
+  return valid;
+
 };
 const checkPassword = () => {
     let valid = false;
@@ -79,6 +94,10 @@ const isEmailValid = (email) => {
     const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return re.test(email);
   };
+  const isPhoneValid= (phone) => {
+    const re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+    return re.test(phone);
+}
   
   const isPasswordSecure = (password) => {
     //regular expresstion (check password)
@@ -120,11 +139,13 @@ const isEmailValid = (email) => {
     //validate fields
     let isUsernameValid = checkUsername(),
         isEmailValid = checkEmail(),
+        isPhoneValid = checkPhone(),
         isPasswordValid = checkPassword(),
       isenterpasswordValid = checkenterpassword();
 
       let isFormValid = isUsernameValid &&
       isEmailValid &&
+      isPhoneValid &&
       isPasswordValid &&
       isenterpasswordValid;
   //submit to the server if the form is valid
@@ -156,6 +177,9 @@ form.addEventListener('input', debounce(function (e) {
       case 'email':
         checkEmail();
         break;
+      case 'phone':
+            checkPhone();
+            break;
       case 'password':
         checkPassword();
         break;
